@@ -1,0 +1,141 @@
+JSL人材開発院  　キム　ソンヨン
+
+1.
+	15.5坪は51.15平方メートルです。
+2.
+	1から12のうち、好きな月を1つ入力しなさい--＞
+	3
+	春です。
+3.
+	繰り返す回数を入力してください＞3
+	羊が 「1」匹
+	羊が 「2」匹
+	羊が 「3」匹
+	おやすみなさい
+4.
+	1から10まで数えます
+
+	1
+	2
+	3!
+	4
+	5
+	6!
+	7
+	8
+	9!
+	10
+
+	繰り返しました！
+5.
+	ゲイム開始
+	コイントスの結果「裏」が出ました。
+	コイントスの結果「裏」が出ました。
+	コイントスの結果「裏」が出ました。
+	コイントスの結果「裏」が出ました。
+	コイントスの結果「表」が出ました。
+	4回目のコイントスで終わりました。
+
+
+
+1.
+package jp.co.f1.superintro.test;
+
+public class Conversion {
+	public static void main(String[] args) {
+		double basisNum = 15.5;
+		double resultNum = basisNum*3.3;
+		System.out.println(basisNum+"坪は"+resultNum+"平方メートルです。");
+	}
+}
+
+
+2.
+package jp.co.f1.superintro.test;
+
+import java.util.Scanner;
+
+public class Season {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1から12のうち、好きな月を1つ入力しなさい--＞");
+		int month = sc.nextInt();
+			String result ="";
+		if (month == 3) {
+			result="春です。";
+		} else if (month == 6) {
+			result="夏です。";
+		} else if (month == 9) {
+			result="秋です。";
+		} else if (month == 12) {
+			result="冬です。";
+		} else {
+			result="季節未設定です。";
+		}
+		System.out.println(result);
+	}
+}
+
+3.
+package jp.co.f1.superintro.test;
+
+import java.util.Scanner;
+
+public class CountSheep {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("繰り返す回数を入力してください＞");
+		int countSheep = sc.nextInt();
+		for(int i=1; i<=countSheep; i++) {
+			System.out.println("羊が 「"+i+"」匹");
+		}
+		System.out.println("おやすみなさい");
+	}
+}
+
+4.
+package jp.co.f1.superintro.test;
+
+import java.util.Scanner;
+
+public class CountNumber {
+	public static void main(String[] args) {
+		System.out.println("1から10まで数えます");
+		System.out.println();
+		for(int i=1; i<=10; i++) {
+			if(i%3==0) {
+				System.out.println(i+"!");
+			}else {
+				System.out.println(i);
+			}
+		}
+		System.out.println();
+		System.out.println("繰り返しました！");
+	}
+}
+
+5.
+package jp.co.f1.superintro.test;
+
+import java.util.Scanner;
+
+public class CountCoin {
+	public static void main(String[] args) {
+		int count = 0;
+		int coin = 0;
+		System.out.println("ゲイム開始");
+		while(true) {
+			coin = (int)(Math.random()*2);
+			if(coin==0) {
+				System.out.println("コイントスの結果「表」が出ました。");
+				break;
+			}else if(coin==1) {
+				System.out.println("コイントスの結果「裏」が出ました。");
+				count++;
+			}
+		}
+		System.out.println(count+"回目のコイントスで終わりました。");
+	}
+}
+
